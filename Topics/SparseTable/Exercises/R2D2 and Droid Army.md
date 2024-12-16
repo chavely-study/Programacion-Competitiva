@@ -51,13 +51,13 @@ cout << st_query(left, right, m - 1);
 NEW_LINE;
 ```
 
-## Demostracion
+## Explicacion
 
 La solucion vista pasa por el siguiente analisis:
 
 1. La cantidad de disparos necesarios para destruir una caracteristica completa de todos los droids de un intervalo es igual al maximo valor que posee un droid de ese intervalo en dicha caracteristica.
-2. Para destruir todas las caracteristicas de todos los droids en un intervalo se necesitan tantos disparos como son necesarios para destruir cada caracteristica sumados. Si esta cantidad es menor que la cantidad de disparos que se pueden usar se puede destruir el intervalo, sino no.
-3. Finalmente para analizar todos los intervalos se utilizan 2 punteros. Uno al inicio y otro al final del intervalos.
+2. Para destruir todas las caracteristicas de todos los droids en un intervalo se necesitan tantos disparos como son necesarios para destruir cada caracteristica en ese intervalo sumados. Si esta cantidad es menor que la cantidad de disparos que se pueden usar, entonces se puede destruir el intervalo, sino no.
+3. Finalmente para analizar todos los intervalos se utilizan 2 punteros. Uno al inicio y otro al final del intervalo.
 4. Si en algun momento el intervalo que comienza por el i-esimo droide no puede ser destruido, entonces ningun intervalo mayor que este que comience por el mismo droide podra ser destruido, pues harian falta una cantidad mayor o igual de disparos para destruirlos y no se dispone de disparos suficientes para desruir el intervalo actual siquiera.
 5. Si tras analizar un intervalo este se puede derribar y al agregarle un elemento a la derecha ya no se puede derribar, entonces ya hay un intervalo de longitud (l - 1) que se puede derribar, por lo tanto cualquier intervalo que comience por alguno de los elementos del intervalo actual y termine en el ultimo elemento del mismo no mejora la solucion actual, por lo tanto se puede ignorar.
 6. Entonces si se parte del intervalo que posee solo el primer elemento y se van agregando elementos al final del mismo mientras sea posible, se llega al mayor intervalo que es posible destruir partiendo del primer droide(4), si posteriormente se elimina el primer elemento del intevalo, por (5) se sabe que no hay necesidad de analizar los subintervalos que comienzan por el nuevo primer elemento del intervalo y terminan antes del ultimo elemento actual del intervalo, luego se procede a cntinuar analizando todos los subintervalos que comienzan por este nuevo primer elemento a partir del que termina en el ultimo elemento actual.
