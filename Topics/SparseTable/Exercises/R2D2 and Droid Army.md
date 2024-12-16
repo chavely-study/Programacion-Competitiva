@@ -79,4 +79,4 @@ O(n) + O(nlogn) + O(n) + O(1) => O(nlogn) {valido}
 
 ## Link
 
-[problem link]([https://codeforces.com/contest/514/problem/D]())
+https://codeforces.com/contest/514/problem/D
